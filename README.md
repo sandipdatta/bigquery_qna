@@ -84,11 +84,29 @@ While this demonstration uses a curated list of BigQuery public datasets, the ag
 
 ### Running the Agent
 
-To start the agent and run the example conversation, execute the following command:
+You can run the agent in two ways:
+
+#### 1. Command-line Test Agent
+
+To start the agent and run the example conversation from your terminal, execute the following command:
 
 ```bash
 python3 -m bigquery_qna.test_agent
 ```
+
+#### 2. Interactive Web UI
+
+For a rich, interactive experience, you can use the `adk web` command. This will launch a local web server with a chat interface where you can interact with the agent, inspect the conversation trace, and see the agent's state.
+
+```bash
+adk web .
+```
+
+This will open a new tab in your browser. Select the `bigquery_qna` agent from the dropdown to start a conversation.
+
+Here is what the interactive web UI looks like:
+
+![ADK Web Example](adk_web_example.png)
 
 ## The Power of the Gemini CLI: Building the Agent
 
