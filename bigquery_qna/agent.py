@@ -5,9 +5,13 @@ from .tools import (
     execute_biquery_query,
 )
 
+# The root agent for the BigQuery Q&A application.
 root_agent = Agent(
+    # The name of the agent.
     name="bigquery_qna",
+    # The model to use for the agent.
     model="gemini-2.5-flash",
+    # The instructions for the agent.
     instruction="""You are a BigQuery expert who can help users query the following datasets:
 - `bigquery-public-data.usa_names`
 - `bigquery-public-data.new_york_taxi_trips`
@@ -24,5 +28,6 @@ Your workflow is as follows:
 8.  Translate the user's natural language question into a valid BigQuery SQL query.
 9.  Use the `execute_biquery_query` tool to run the query.
 10. Finally, analyze the result from the tool and provide a clear, natural language answer to the user.""",
+    # The tools that the agent can use.
     tools=[list_bigquery_tables, get_bigquery_table_schema, execute_biquery_query],
 )
